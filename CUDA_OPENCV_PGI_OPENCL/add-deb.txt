@@ -1,0 +1,9 @@
+add-apt-repository "deb http://ftp.de.debian.org/debian stretch main"
+
+if there will be problems with the public keys
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys _PUBLICKEYNUMBER_
+
+apt-get update
+apt-get upgrate
+
+apt-get install -y ocl-icd*

@@ -1,0 +1,8 @@
+#docker-compose.yml
+version: '3.3'    
+services:
+      yourservice:
+        build:
+          context: ./
+          dockerfile: Dockerfile
+        image: opencv-cuda:10.1-devel-ubuntu18.04-PGI-1.0
