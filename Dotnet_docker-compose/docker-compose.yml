@@ -1,0 +1,31 @@
+version: '3'
+services:
+    app:
+        # for build image from dockerfile
+        # container_name: node
+        # restart: always
+        # build: ./node #for build
+
+        # for download image from dockerhub 
+        container_name: dotnetcore
+        #image: mcr.microsoft.com/dotnet/core-nightly/sdk
+        image: dotnetcore_mod #mcr.microsoft.com/dotnet/core/sdk:3.1
+       # stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        ports:
+            - "5000:5000"
+            - "5001:5001"
+            - "80:80"
+            - "443:443"
+            - "44319:44319"
+            - "26216:26216"
+        volumes: 
+            - ./dotnet:/usr/src/app
+        # environment:
+            # ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            # ME_CONFIG_MONGODB_ADMINPASSWORD: example
+        # depends_on: 
+        command: tail -F anything
+ # docker exec -ti <container name> /bin/bash
+# docker run -it --rm -p 5901:5901 -p 6901:6901 -p 5000:5000 -p 3000:3000 -v `pwd -W`:/usr/src/app -u root ed707
+# docker exec -it -u root -w /usr/src/app ae bash
